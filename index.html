@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JDC Applications</title>
+<meta name="description" content="JDC Applications builds focused, useful apps for iPhone. Maker of BottleWise.">
+<style>
+  :root {
+    --bg: #f5f5f2;
+    --ink: #1a1a1a;
+    --muted: #888;
+    --wine: #62202B;
+    --wine-dark: #4A1820;
+    --wine-light: #A65A66;
+    --wine-pale: #EDE0E3;
+    --wine-deep: #3A1219;
+    --teal-dark: #0F6E56;
+    --teal-pale: #E1F5EE;
+    --amber-dark: #854F0B;
+    --amber-pale: #FAEEDA;
+    --coral-dark: #993C1D;
+    --coral-pale: #FAECE7;
+    --border: #ddd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 80px 0 56px; }
+  .brand {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--wine); margin-bottom: 28px;
+  }
+  h1 {
+    font-size: clamp(30px, 6vw, 46px); font-weight: 600;
+    letter-spacing: -0.02em; line-height: 1.12; margin-bottom: 18px;
+    max-width: 18ch;
+  }
+  .lede { font-size: 17px; color: #555; max-width: 52ch; }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px;
+  }
+  .pill-wine { background: var(--wine-pale); color: var(--wine-dark); }
+  .pill-teal { background: var(--teal-pale); color: var(--teal-dark); }
+  .pill-amber { background: var(--amber-pale); color: var(--amber-dark); }
+  .pill-coral { background: var(--coral-pale); color: var(--coral-dark); }
+
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 18px;
+  }
+
+  .apps { padding: 16px 0 64px; }
+  .app-card {
+    display: block; text-decoration: none; color: inherit;
+    background: #fff; border: 0.5px solid var(--border); border-radius: 14px;
+    padding: 24px; transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  }
+  .app-card:hover {
+    border-color: var(--wine-light); transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(98,32,43,0.10);
+  }
+  .app-card-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .app-icon {
+    width: 52px; height: 52px; border-radius: 13px; flex: 0 0 auto;
+    background: linear-gradient(150deg, #883240, #4A1820);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+  }
+  .app-name { font-size: 18px; font-weight: 600; }
+  .app-tag { font-size: 13px; color: var(--muted); }
+  .app-desc { font-size: 14px; color: #555; margin-bottom: 14px; }
+  .app-link { font-size: 13px; font-weight: 500; color: var(--wine); }
+  .app-card:hover .app-link { color: var(--wine-dark); }
+
+  .soon {
+    margin-top: 14px; border: 0.5px dashed var(--border); border-radius: 14px;
+    padding: 18px 24px; font-size: 13px; color: var(--muted);
+  }
+
+  footer {
+    border-top: 0.5px solid var(--border); padding: 32px 0 56px;
+    font-size: 13px; color: var(--muted);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  footer a { color: var(--wine); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .app-card { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <p class="brand">JDC Applications</p>
+    <h1>Small apps that do one thing, and do it well.</h1>
+    <p class="lede">An independent studio building focused, native iPhone apps. No clutter, no noise, just tools that earn a place on your home screen.</p>
+    <div class="pill-row">
+      <span class="pill pill-wine">Native iOS</span>
+      <span class="pill pill-teal">Privacy-minded</span>
+      <span class="pill pill-amber">Independent</span>
+    </div>
+  </header>
+
+  <section class="apps">
+    <p class="section-label">Apps</p>
+
+    <a class="app-card" href="/bottlewise/">
+      <div class="app-card-top">
+        <div class="app-icon">&#127863;</div>
+        <div>
+          <div class="app-name">BottleWise</div>
+          <div class="app-tag">Your personal wine guide</div>
+        </div>
+      </div>
+      <p class="app-desc">Point your camera at any restaurant wine list and get personalized, ranked recommendations built around your own taste. Scan single bottles and store shelves too.</p>
+      <span class="app-link">Learn more &rarr;</span>
+    </a>
+
+    <div class="soon">More apps in the works. Check back soon.</div>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 JDC Applications</span>
+    <span><a href="mailto:main@jdcapplications.com">main@jdcapplications.com</a></span>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BottleWise &mdash; Your personal wine guide</title>
+<meta name="description" content="BottleWise reads any restaurant wine list and tells you exactly what to order, ranked for your taste. Scan bottles and store shelves too.">
+<style>
+  :root {
+    --bg: #f5f5f2;
+    --ink: #1a1a1a;
+    --muted: #888;
+    --wine: #62202B;
+    --wine-dark: #4A1820;
+    --wine-light: #A65A66;
+    --wine-pale: #EDE0E3;
+    --wine-deep: #3A1219;
+    --teal-dark: #0F6E56;
+    --teal-pale: #E1F5EE;
+    --amber-dark: #854F0B;
+    --amber-pale: #FAEEDA;
+    --coral-dark: #993C1D;
+    --coral-pale: #FAECE7;
+    --border: #ddd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--bg); color: var(--ink); line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--wine); }
+
+  .topbar { padding: 24px 0; }
+  .back { font-size: 13px; color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--ink); }
+
+  header { padding: 40px 0 56px; }
+  .app-head { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+  .app-icon {
+    width: 62px; height: 62px; border-radius: 15px; flex: 0 0 auto;
+    background: linear-gradient(150deg, #883240, #4A1820);
+    display: flex; align-items: center; justify-content: center; font-size: 31px;
+  }
+  .eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--wine);
+  }
+  .app-name-lg { font-size: 26px; font-weight: 600; letter-spacing: -0.01em; }
+  h1 {
+    font-size: clamp(28px, 5.5vw, 42px); font-weight: 600;
+    letter-spacing: -0.02em; line-height: 1.14; margin-bottom: 18px; max-width: 20ch;
+  }
+  .lede { font-size: 17px; color: #555; max-width: 54ch; margin-bottom: 28px; }
+
+  .store-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink); color: #fff; text-decoration: none;
+    font-size: 14px; font-weight: 500; padding: 12px 18px; border-radius: 10px;
+    opacity: 0.45; cursor: default;
+  }
+  .store-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 34px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 20px;
+  }
+  .pill-wine { background: var(--wine-pale); color: var(--wine-dark); }
+  .pill-teal { background: var(--teal-pale); color: var(--teal-dark); }
+  .pill-amber { background: var(--amber-pale); color: var(--amber-dark); }
+  .pill-coral { background: var(--coral-pale); color: var(--coral-dark); }
+
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 20px;
+  }
+
+  .features { padding: 8px 0 56px; }
+  .feature {
+    background: #fff; border: 0.5px solid var(--border); border-radius: 14px;
+    padding: 22px 24px; margin-bottom: 12px;
+  }
+  .feature-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .feature-icon { font-size: 20px; }
+  .feature-title { font-size: 16px; font-weight: 600; }
+  .feature-body { font-size: 14px; color: #555; }
+
+  .how { padding: 8px 0 56px; }
+  .step { display: flex; gap: 16px; padding: 16px 0; border-bottom: 0.5px solid var(--border); }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    flex: 0 0 auto; width: 28px; height: 28px; border-radius: 50%;
+    background: var(--wine-pale); color: var(--wine-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 600;
+  }
+  .step-title { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+  .step-body { font-size: 14px; color: #555; }
+
+  footer {
+    border-top: 0.5px solid var(--border); padding: 32px 0 56px;
+    font-size: 13px; color: var(--muted);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px;
+  }
+  footer a { color: var(--wine); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="/">&larr; JDC Applications</a>
+  </div>
+
+  <header>
+    <div class="app-head">
+      <div class="app-icon">&#127863;</div>
+      <div>
+        <p class="eyebrow">BottleWise</p>
+        <p class="app-name-lg">Wine, without the guesswork</p>
+      </div>
+    </div>
+    <h1>Read any wine list and know exactly what to order.</h1>
+    <p class="lede">BottleWise learns your taste in the first few minutes, then turns any restaurant wine list into clear, ranked picks made for you. No jargon. No staring at a list of names you don't recognize.</p>
+
+    <span class="store-btn">&#63743;&nbsp; App Store</span>
+    <p class="store-note">Coming soon to iPhone.</p>
+
+    <div class="pill-row">
+      <span class="pill pill-wine">Citrus</span>
+      <span class="pill pill-coral">Red berry</span>
+      <span class="pill pill-amber">Spice &amp; oak</span>
+      <span class="pill pill-teal">Earthy</span>
+    </div>
+  </header>
+
+  <section class="features">
+    <p class="section-label">What it does</p>
+
+    <div class="feature">
+      <div class="feature-top">
+        <span class="feature-icon">&#128247;</span>
+        <span class="feature-title">Scan the wine list</span>
+      </div>
+      <p class="feature-body">Snap a photo of the list at any restaurant. BottleWise reads it, matches each wine against your taste profile, and ranks the ones you're most likely to love.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-top">
+        <span class="feature-icon">&#127863;</span>
+        <span class="feature-title">Scan a single bottle</span>
+      </div>
+      <p class="feature-body">Curious about a bottle in your hand? Scan the label for a plain-language read on its flavor profile and whether it fits what you like.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-top">
+        <span class="feature-icon">&#127978;</span>
+        <span class="feature-title">Scan the shelf</span>
+      </div>
+      <p class="feature-body">Facing a wall of wine at the store? Scan the shelf and BottleWise surfaces the bottles worth your money, ranked for your taste.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-top">
+        <span class="feature-icon">&#127869;</span>
+        <span class="feature-title">Built around your taste</span>
+      </div>
+      <p class="feature-body">A short flavor quiz builds your profile from the start, and every pick is explained in language that actually means something. Food pairing helps you match wine to the meal in front of you.</p>
+    </div>
+  </section>
+
+  <section class="how">
+    <p class="section-label">How it works</p>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <p class="step-title">Tell us what you like</p>
+        <p class="step-body">A quick flavor quiz sets up your taste profile. It sharpens the more you use the app.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <p class="step-title">Point your camera</p>
+        <p class="step-body">At a list, a bottle, or a shelf. BottleWise reads it on the spot.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <p class="step-title">Order with confidence</p>
+        <p class="step-body">Get ranked picks with a clear reason behind each one. Save the wines you love to come back to.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>&copy; 2026 JDC Applications</span>
+    <span class="footer-links">
+      <a href="/bottlewise/privacy.html">Privacy</a>
+      <a href="/bottlewise/support.html">Support</a>
+      <a href="mailto:main@jdcapplications.com">Contact</a>
+    </span>
+  </footer>
+
+</div>
+
+</body>
+</html>
