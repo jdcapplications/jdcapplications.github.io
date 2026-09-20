@@ -64,40 +64,51 @@
   <header>
     <p class="eyebrow">BottleWise</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 13, 2026</p>
+    <p class="updated">Last updated: September 20, 2026</p>
   </header>
 
   <div class="doc">
 
     <p>BottleWise is built by JDC Applications. This policy explains what information the app uses, why, and the choices you have. We keep data collection to the minimum needed to make the app work.</p>
 
+    <div class="callout">
+      BottleWise has no accounts and no servers of its own. Your taste profile, saved wines and scan history are stored only on your device. We cannot see them, and we have no way to identify you.
+    </div>
+
     <h2>Information we use</h2>
     <p>BottleWise is designed to work with as little personal information as possible.</p>
     <ul>
-      <li><strong>Photos you scan.</strong> When you point the camera at a wine list, bottle, or shelf, the image is processed to read the text and identify the wines. Scanned images are not stored or retained by us. They are used to produce your recommendations and then discarded.</li>
-      <li><strong>Your taste profile.</strong> The answers you give in the flavor quiz, and the wines you save, are used to personalize your recommendations.</li>
-      <li><strong>Purchase information.</strong> If you subscribe, your purchase is handled by Apple through the App Store. We receive confirmation that a subscription is active, but we never see your payment details.</li>
-      <li><strong>Basic diagnostics.</strong> We may collect anonymous crash and performance information to fix bugs and improve reliability.</li>
+      <li><strong>Photos you scan.</strong> When you point the camera at a wine list, bottle or shelf &mdash; or choose an existing photo from your library &mdash; the image is sent to Anthropic&rsquo;s Claude API to read the text and identify the wines. We do not store the image ourselves. See &ldquo;How your scans are processed&rdquo; below.</li>
+      <li><strong>Your taste profile.</strong> The answers you give in the flavor quiz, the wines you save and the ratings you give them are stored on your device and used to personalize your recommendations. A short text summary of your profile, which can include the names of wines you have saved, is sent along with each scan so the recommendations can be matched to your taste.</li>
+      <li><strong>Purchase information.</strong> If you subscribe, your purchase is handled entirely by Apple through the App Store. We receive only confirmation that a subscription is active. We never see your payment details, and we do not operate a purchase server.</li>
+      <li><strong>Scan count.</strong> To apply the monthly free-scan allowance, the app records the date and type of each successful scan on your device. This is a count only &mdash; it contains no information about what you scanned.</li>
     </ul>
-    <p>BottleWise does not request or use your location.</p>
+    <p>BottleWise does not request or use your location. It contains no analytics, advertising or crash-reporting software, and it sends no diagnostic data to us. If you have chosen to share crash reports with developers in your iOS privacy settings, Apple may provide us with anonymous crash reports; that is handled by Apple, not by the app.</p>
 
-    <h2>How your photos are processed</h2>
-    <p>To read a wine list, bottle label, or shelf, BottleWise sends the image to a trusted third-party artificial intelligence service that performs the text recognition and wine matching. The image is used only to return your results. It is not retained by us, and it is not used to build a profile of you or to identify you. We encourage you to avoid capturing people or other personal details in your scans.</p>
+    <h2>How your scans are processed</h2>
+    <p>To read a wine list, bottle label or shelf, BottleWise sends the image &mdash; together with the text summary of your taste profile described above &mdash; to the Claude API operated by Anthropic, PBC, which performs the text recognition and wine matching. This is the only service the app transmits anything to.</p>
+    <p>The request is not tied to any account or identifier, because the app has none. Anthropic processes the request to return your results and may retain it for a limited period for abuse monitoring under their own policies; it is not used to train their models under the terms that apply to our use of the API. You can read their privacy policy at <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a>.</p>
+    <p>Because the whole photo is sent, we encourage you to avoid capturing people, faces or other personal details in your scans.</p>
 
     <h2>What we do not do</h2>
     <ul>
       <li>We do not sell your personal information.</li>
       <li>We do not share your information with advertisers.</li>
       <li>We do not build advertising profiles about you.</li>
+      <li>We do not track you across other apps or websites.</li>
+      <li>We do not collect analytics, usage statistics or device identifiers.</li>
     </ul>
 
     <h2>Where your data lives</h2>
-    <p>Your taste profile and saved wines are stored to power your recommendations. We keep information only as long as it is needed to provide the app, and you can clear your saved data or delete your profile from within the app at any time.</p>
+    <p>Your taste profile, saved wines, ratings, scan history and free-scan count are stored on your device only. They are not uploaded to us and are not backed up to any service we control. Deleting the app removes all of it.</p>
+    <p>Scan photos are held in memory only for as long as it takes to send them and show you the result. The app never writes a scanned image to storage.</p>
 
     <h2>Your choices</h2>
     <ul>
-      <li>You control camera access through your device's Settings.</li>
-      <li>You can clear your saved wines and reset your taste profile in the app.</li>
+      <li>You control camera and photo library access in your device&rsquo;s Settings, under Privacy &amp; Security.</li>
+      <li>BottleWise can send you a notification when a scan finishes while you are in another app. These are local notifications generated on your device; nothing is sent to us. You can turn them off in Settings.</li>
+      <li>In the app, under <strong>Settings &rarr; Your Data</strong>, <strong>Delete My Data</strong> permanently removes your saved wines, ratings, taste profile and scan history from the device and restarts the taste quiz. It asks you to confirm twice, because it cannot be undone.</li>
+      <li>You can delete individual saved wines or scan history entries by swiping them away.</li>
       <li>You can manage or cancel your subscription in your Apple account settings.</li>
     </ul>
 
