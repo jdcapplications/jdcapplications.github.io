@@ -64,7 +64,7 @@
   <header>
     <p class="eyebrow">BottleWise</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: September 20, 2026</p>
+    <p class="updated">Last updated: September 26, 2026</p>
   </header>
 
   <div class="doc">
@@ -72,23 +72,42 @@
     <p>BottleWise is built by JDC Applications. This policy explains what information the app uses, why, and the choices you have. We keep data collection to the minimum needed to make the app work.</p>
 
     <div class="callout">
-      BottleWise has no accounts and no servers of its own. Your taste profile, saved wines and scan history are stored only on your device. We cannot see them, and we have no way to identify you.
+      BottleWise has no accounts. Your taste profile, saved wines and scan history are stored only on your device. Scans pass through a small relay server we run to reach the AI service; it doesn&rsquo;t keep what you scan, and we have no way to identify you.
     </div>
 
     <h2>Information we use</h2>
     <p>BottleWise is designed to work with as little personal information as possible.</p>
     <ul>
-      <li><strong>Photos you scan.</strong> When you point the camera at a wine list, bottle or shelf &mdash; or choose an existing photo from your library &mdash; the image is sent to Anthropic&rsquo;s Claude API to read the text and identify the wines. We do not store the image ourselves. See &ldquo;How your scans are processed&rdquo; below.</li>
+      <li><strong>Photos you scan.</strong> When you point the camera at a wine list, bottle or shelf &mdash; or choose an existing photo from your library &mdash; the image is sent through our relay to Anthropic&rsquo;s Claude API to read the text and identify the wines. We do not store the image. See &ldquo;How your scans are processed&rdquo; below.</li>
       <li><strong>Your taste profile.</strong> The answers you give in the flavor quiz, the wines you save and the ratings you give them are stored on your device and used to personalize your recommendations. A short text summary of your profile, which can include the names of wines you have saved, is sent along with each scan so the recommendations can be matched to your taste.</li>
-      <li><strong>Purchase information.</strong> If you subscribe, your purchase is handled entirely by Apple through the App Store. We receive only confirmation that a subscription is active. We never see your payment details, and we do not operate a purchase server.</li>
+      <li><strong>A device verification record.</strong> To stop anyone other than the genuine BottleWise app from using our relay, the app proves to our server that it is a real, unmodified copy running on an Apple device. Our server keeps a small record of this, described under &ldquo;Device verification&rdquo; below. It contains no personal information.</li>
+      <li><strong>Purchase information.</strong> If you subscribe, your purchase is handled entirely by Apple through the App Store. We receive only confirmation that a subscription is active. We never see your payment details.</li>
       <li><strong>Scan count.</strong> To apply the monthly free-scan allowance, the app records the date and type of each successful scan on your device. This is a count only &mdash; it contains no information about what you scanned.</li>
     </ul>
     <p>BottleWise does not request or use your location. It contains no analytics, advertising or crash-reporting software, and it sends no diagnostic data to us. If you have chosen to share crash reports with developers in your iOS privacy settings, Apple may provide us with anonymous crash reports; that is handled by Apple, not by the app.</p>
 
     <h2>How your scans are processed</h2>
-    <p>To read a wine list, bottle label or shelf, BottleWise sends the image &mdash; together with the text summary of your taste profile described above &mdash; to the Claude API operated by Anthropic, PBC, which performs the text recognition and wine matching. This is the only service the app transmits anything to.</p>
-    <p>The request is not tied to any account or identifier, because the app has none. Anthropic processes the request to return your results and may retain it for a limited period for abuse monitoring under their own policies; it is not used to train their models under the terms that apply to our use of the API. You can read their privacy policy at <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a>.</p>
+    <p>When you scan, the app sends the image &mdash; together with the text summary of your taste profile described above &mdash; to a relay server operated by JDC Applications and hosted by Cloudflare. The relay confirms the request comes from a genuine copy of BottleWise, forwards it to the Claude API operated by Anthropic, PBC, and passes the result straight back to your phone.</p>
+    <p>The relay does not store your photos, your taste profile or your results, and we do not keep request logs. To keep the service running we can watch basic information about requests as they happen &mdash; such as the type of request, which AI model handled it, whether it succeeded and how long it took &mdash; but we never see or record their content, and we don&rsquo;t save this information.</p>
+    <p>Anthropic processes each request to return your results and may retain it for a limited period under their own policies. How Anthropic handles this data is described in their privacy policy at <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a>.</p>
+    <p><strong>We do not use your photos, scans or taste profile to train AI models.</strong></p>
     <p>Because the whole photo is sent, we encourage you to avoid capturing people, faces or other personal details in your scans.</p>
+
+    <h2>IP addresses</h2>
+    <p>Like any internet service, our relay receives your IP address with each request. We use it only briefly, to limit how many requests can be made in a short time and so prevent abuse. We do not store IP addresses or use them to locate or identify you. Cloudflare, which hosts the relay, processes network traffic including IP addresses under <a href="https://www.cloudflare.com/privacypolicy/">its own privacy policy</a>.</p>
+
+    <h2>Device verification</h2>
+    <p>The first time you open BottleWise, it creates a cryptographic key stored in your phone&rsquo;s secure hardware and asks Apple&rsquo;s App Attest service to confirm that the app is genuine. Apple receives the information it needs to do this under <a href="https://www.apple.com/legal/privacy/">Apple&rsquo;s privacy policy</a>. After that, the app periodically proves it still holds the key, so our relay can tell genuine requests from anyone else&rsquo;s.</p>
+    <p>Our server stores, for each installation of the app:</p>
+    <ul>
+      <li>a random identifier for the key, created on your phone;</li>
+      <li>the key&rsquo;s public half, used to check the app&rsquo;s signatures;</li>
+      <li>a counter, used to stop old requests being replayed;</li>
+      <li>whether the installation was set up in Apple&rsquo;s development or production environment;</li>
+      <li>when the record was created and when it was last used.</li>
+    </ul>
+    <p>This record is not linked to your name, email address, Apple ID, phone number or anything else about you, and we don&rsquo;t use it to track you or combine it with other information. It is used only to confirm requests come from genuine BottleWise and to block abuse.</p>
+    <p>Records are deleted automatically once they have not been used for 90 days. The only exception is an installation we have blocked for abuse, whose record is kept so the block stays in effect. Deleting the app, or using <strong>Delete My Data</strong>, removes the key from your phone; the next time you use BottleWise it creates a new, unrelated one.</p>
 
     <h2>What we do not do</h2>
     <ul>
@@ -96,18 +115,19 @@
       <li>We do not share your information with advertisers.</li>
       <li>We do not build advertising profiles about you.</li>
       <li>We do not track you across other apps or websites.</li>
-      <li>We do not collect analytics, usage statistics or device identifiers.</li>
+      <li>We do not collect analytics or usage statistics, and we do not use advertising identifiers. The only identifier we keep is the per-installation verification identifier described under &ldquo;Device verification&rdquo;.</li>
     </ul>
 
     <h2>Where your data lives</h2>
     <p>Your taste profile, saved wines, ratings, scan history and free-scan count are stored on your device only. They are not uploaded to us and are not backed up to any service we control. Deleting the app removes all of it.</p>
+    <p>The only information our server keeps is the device verification record described above, which contains nothing about you or your wines.</p>
     <p>Scan photos are held in memory only for as long as it takes to send them and show you the result. The app never writes a scanned image to storage.</p>
 
     <h2>Your choices</h2>
     <ul>
       <li>You control camera and photo library access in your device&rsquo;s Settings, under Privacy &amp; Security.</li>
       <li>BottleWise can send you a notification when a scan finishes while you are in another app. These are local notifications generated on your device; nothing is sent to us. You can turn them off in Settings.</li>
-      <li>In the app, under <strong>Settings &rarr; Your Data</strong>, <strong>Delete My Data</strong> permanently removes your saved wines, ratings, taste profile and scan history from the device and restarts the taste quiz. It asks you to confirm twice, because it cannot be undone.</li>
+      <li>In the app, under <strong>Settings &rarr; Your Data</strong>, <strong>Delete My Data</strong> permanently removes your saved wines, ratings, taste profile and scan history from the device, resets its device verification key, and restarts the taste quiz. It asks you to confirm twice, because it cannot be undone.</li>
       <li>You can delete individual saved wines or scan history entries by swiping them away.</li>
       <li>You can manage or cancel your subscription in your Apple account settings.</li>
     </ul>
