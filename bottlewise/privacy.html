@@ -64,7 +64,7 @@
   <header>
     <p class="eyebrow">BottleWise</p>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: September 26, 2026</p>
+    <p class="updated">Last updated: September 27, 2026</p>
   </header>
 
   <div class="doc">
@@ -81,8 +81,8 @@
       <li><strong>Photos you scan.</strong> When you point the camera at a wine list, bottle or shelf &mdash; or choose an existing photo from your library &mdash; the image is sent through our relay to Anthropic&rsquo;s Claude API to read the text and identify the wines. We do not store the image. See &ldquo;How your scans are processed&rdquo; below.</li>
       <li><strong>Your taste profile.</strong> The answers you give in the flavor quiz, the wines you save and the ratings you give them are stored on your device and used to personalize your recommendations. A short text summary of your profile, which can include the names of wines you have saved, is sent along with each scan so the recommendations can be matched to your taste.</li>
       <li><strong>A device verification record.</strong> To stop anyone other than the genuine BottleWise app from using our relay, the app proves to our server that it is a real, unmodified copy running on an Apple device. Our server keeps a small record of this, described under &ldquo;Device verification&rdquo; below. It contains no personal information.</li>
-      <li><strong>Purchase information.</strong> If you subscribe, your purchase is handled entirely by Apple through the App Store. We receive only confirmation that a subscription is active. We never see your payment details.</li>
-      <li><strong>Scan count.</strong> To apply the monthly free-scan allowance, the app records the date and type of each successful scan on your device. This is a count only &mdash; it contains no information about what you scanned.</li>
+      <li><strong>Purchase information.</strong> If you subscribe, your purchase is handled entirely by Apple through the App Store. We never see your payment details. So that subscribers get unlimited scans, the app sends our server Apple&rsquo;s signed proof of your subscription, which our server checks and then discards without storing it.</li>
+      <li><strong>Scan counts.</strong> To apply the monthly free-scan allowance, the app records the date and type of each successful scan on your device, and our server keeps a matching count. See &ldquo;The free-scan allowance&rdquo; below. Neither contains anything about what you scanned.</li>
     </ul>
     <p>BottleWise does not request or use your location. It contains no analytics, advertising or crash-reporting software, and it sends no diagnostic data to us. If you have chosen to share crash reports with developers in your iOS privacy settings, Apple may provide us with anonymous crash reports; that is handled by Apple, not by the app.</p>
 
@@ -109,6 +109,12 @@
     <p>This record is not linked to your name, email address, Apple ID, phone number or anything else about you, and we don&rsquo;t use it to track you or combine it with other information. It is used only to confirm requests come from genuine BottleWise and to block abuse.</p>
     <p>Records are deleted automatically once they have not been used for 90 days. The only exception is an installation we have blocked for abuse, whose record is kept so the block stays in effect. Deleting the app, or using <strong>Delete My Data</strong>, removes the key from your phone; the next time you use BottleWise it creates a new, unrelated one.</p>
 
+    <h2>The free-scan allowance</h2>
+    <p>BottleWise includes a number of free scans each month. So that the allowance can&rsquo;t be reset by changing the phone&rsquo;s clock, editing the app&rsquo;s data or reinstalling it, our server keeps count too.</p>
+    <p>For each free scan, our server records which installation it came from (the random verification identifier described above), a random identifier for the scan itself, when it happened, whether it was a wine-list or bottle scan, and whether it was refunded. A scan is refunded when it doesn&rsquo;t produce a usable result, so only successful scans count. These records never include your photo, your results or anything about what you scanned, and they are deleted after 60 days. Scans by subscribers, and by test versions of the app (unless a tester turns on quota testing), are not recorded.</p>
+    <p>To confirm whether the app is a test version or an App Store copy, the app sends our server Apple&rsquo;s signed record of how it was installed. Our server checks it and does not store it.</p>
+    <p>So that reinstalling the app doesn&rsquo;t reset the allowance, we use Apple&rsquo;s DeviceCheck service. It lets us store two bits of information about your device on Apple&rsquo;s servers, along with the month they were last set. We use them only to record roughly how much of that month&rsquo;s free allowance the device has used. They contain nothing else, only we can read them, and we ignore them once the month is over. We never store the temporary token the app uses to reach them. Apple handles DeviceCheck under <a href="https://www.apple.com/legal/privacy/">its privacy policy</a>.</p>
+
     <h2>What we do not do</h2>
     <ul>
       <li>We do not sell your personal information.</li>
@@ -120,14 +126,14 @@
 
     <h2>Where your data lives</h2>
     <p>Your taste profile, saved wines, ratings, scan history and free-scan count are stored on your device only. They are not uploaded to us and are not backed up to any service we control. Deleting the app removes all of it.</p>
-    <p>The only information our server keeps is the device verification record described above, which contains nothing about you or your wines.</p>
+    <p>The only information our server keeps is the device verification record and the free-scan counts described above. Neither contains anything about you or your wines.</p>
     <p>Scan photos are held in memory only for as long as it takes to send them and show you the result. The app never writes a scanned image to storage.</p>
 
     <h2>Your choices</h2>
     <ul>
       <li>You control camera and photo library access in your device&rsquo;s Settings, under Privacy &amp; Security.</li>
       <li>BottleWise can send you a notification when a scan finishes while you are in another app. These are local notifications generated on your device; nothing is sent to us. You can turn them off in Settings.</li>
-      <li>In the app, under <strong>Settings &rarr; Your Data</strong>, <strong>Delete My Data</strong> permanently removes your saved wines, ratings, taste profile and scan history from the device, resets its device verification key, and restarts the taste quiz. It asks you to confirm twice, because it cannot be undone.</li>
+      <li>In the app, under <strong>Settings &rarr; Your Data</strong>, <strong>Delete My Data</strong> permanently removes your saved wines, ratings, taste profile and scan history from the device, resets its device verification key, and restarts the taste quiz. It asks you to confirm twice, because it cannot be undone. It does not reset this month&rsquo;s free-scan allowance.</li>
       <li>You can delete individual saved wines or scan history entries by swiping them away.</li>
       <li>You can manage or cancel your subscription in your Apple account settings.</li>
     </ul>
