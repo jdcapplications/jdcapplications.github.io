@@ -115,6 +115,9 @@
     <p>To confirm whether the app is a test version or an App Store copy, the app sends our server Apple&rsquo;s signed record of how it was installed. Our server checks it and does not store it.</p>
     <p>So that reinstalling the app doesn&rsquo;t reset the allowance, we use Apple&rsquo;s DeviceCheck service. It lets us store two bits of information about your device on Apple&rsquo;s servers, along with the month they were last set. We use them only to record roughly how much of that month&rsquo;s free allowance the device has used. They contain nothing else, only we can read them, and we ignore them once the month is over. We never store the temporary token the app uses to reach them. Apple handles DeviceCheck under <a href="https://www.apple.com/legal/privacy/">its privacy policy</a>.</p>
 
+    <h2>Test versions of the app</h2>
+    <p>If you are testing a pre-release version of BottleWise (through Apple&rsquo;s TestFlight), then when you finish setting up your taste profile, the app sends our server any wine names you typed that BottleWise didn&rsquo;t recognise, so we can add them to the wine list. Only the name itself is sent, along with whether the app could partly match it, and our server keeps a count of how often each name has been sent. Nothing identifies you or your device: it isn&rsquo;t linked to the verification identifier, your IP address or anything else. A name is deleted once it hasn&rsquo;t been sent for 90 days. The copy of BottleWise available on the App Store never sends these.</p>
+
     <h2>What we do not do</h2>
     <ul>
       <li>We do not sell your personal information.</li>
@@ -126,7 +129,7 @@
 
     <h2>Where your data lives</h2>
     <p>Your taste profile, saved wines, ratings, scan history and free-scan count are stored on your device only. They are not uploaded to us and are not backed up to any service we control. Deleting the app removes all of it.</p>
-    <p>The only information our server keeps is the device verification record and the free-scan counts described above. Neither contains anything about you or your wines.</p>
+    <p>The only information our server keeps is the device verification record and the free-scan counts described above. Neither contains anything about you or your wines. Test versions of the app also send the unrecognised wine names described under &ldquo;Test versions of the app&rdquo;, which are not linked to you or your device.</p>
     <p>Scan photos are held in memory only for as long as it takes to send them and show you the result. The app never writes a scanned image to storage.</p>
 
     <h2>Your choices</h2>
