@@ -87,8 +87,12 @@
     background: #fff; border: 0.5px solid var(--border); border-radius: 14px;
     padding: 22px 24px; margin-bottom: 12px;
   }
-  .feature-top { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
-  .feature-icon { font-size: 20px; }
+  .feature-top { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .feature-icon {
+    width: 22px; height: 22px; flex: 0 0 auto; align-self: center;
+    fill: none; stroke: var(--wine); stroke-width: 1.6;
+    stroke-linecap: round; stroke-linejoin: round;
+  }
   .feature-title { font-size: 16px; font-weight: 600; }
   .feature-body { font-size: 14px; color: #555; }
 
@@ -138,12 +142,6 @@
     <span class="store-btn">&#63743;&nbsp; App Store</span>
     <p class="store-note">Coming soon to iPhone.</p>
 
-    <div class="pill-row">
-      <span class="pill pill-wine">Dark fruit</span>
-      <span class="pill pill-coral">Red fruit</span>
-      <span class="pill pill-amber">Oaky &amp; buttery</span>
-      <span class="pill pill-teal">Earthy &amp; savory</span>
-    </div>
   </header>
 
   <section class="features">
@@ -151,7 +149,7 @@
 
     <div class="feature">
       <div class="feature-top">
-        <span class="feature-icon">&#128247;</span>
+        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7.5h6M8.5 11h7M8.5 14h7M8.5 17h4.5"/></svg>
         <span class="feature-title">Scan a wine list</span>
       </div>
       <p class="feature-body">Photograph the list at a restaurant, or a menu or chalkboard. BottleWise reads every wine on it and gives you five picks: your two best matches, plus three &ldquo;stretch picks&rdquo; that are a little outside your usual taste but worth a try. Each one comes with a short reason.</p>
@@ -159,7 +157,7 @@
 
     <div class="feature">
       <div class="feature-top">
-        <span class="feature-icon">&#127978;</span>
+        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18M21 3v18M3 11.5h18M3 20h18"/><rect x="5.5" y="7.0" width="3" height="4.5" rx="0.8"/><path d="M7.0 7.0V5.0"/><rect x="10.5" y="7.0" width="3" height="4.5" rx="0.8"/><path d="M12.0 7.0V5.0"/><rect x="15.5" y="7.0" width="3" height="4.5" rx="0.8"/><path d="M17.0 7.0V5.0"/><rect x="5.5" y="15.5" width="3" height="4.5" rx="0.8"/><path d="M7.0 15.5V13.5"/><rect x="10.5" y="15.5" width="3" height="4.5" rx="0.8"/><path d="M12.0 15.5V13.5"/><rect x="15.5" y="15.5" width="3" height="4.5" rx="0.8"/><path d="M17.0 15.5V13.5"/></svg>
         <span class="feature-title">Scan a store shelf</span>
       </div>
       <p class="feature-body">Standing in front of a wall of wine? Photograph the shelf in the same way. BottleWise picks the bottles that suit you and circles where each one sits in your photo, so you can find it on the shelf.</p>
@@ -167,7 +165,7 @@
 
     <div class="feature">
       <div class="feature-top">
-        <span class="feature-icon">&#127863;</span>
+        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 2.5h3v4.5c0 1 2.5 2.2 2.5 5V20a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 8 20v-8c0-2.8 2.5-4 2.5-5z"/><rect x="8" y="13" width="8" height="5"/></svg>
         <span class="feature-title">Scan a single bottle</span>
       </div>
       <p class="feature-body">Holding a bottle you don't know? Scan the label to see what it tastes like and how well it fits your palate, then save it to your wines.</p>
@@ -175,7 +173,7 @@
 
     <div class="feature">
       <div class="feature-top">
-        <span class="feature-icon">&#127919;</span>
+        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h3M11 12h9M4 18h8M16 18h4"/><circle cx="16" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="14" cy="18" r="2"/></svg>
         <span class="feature-title">Narrow it down</span>
       </div>
       <p class="feature-body">Only want a red tonight, a sparkling wine, or something under $30? Choose a wine type, a style or grape, and a budget before you scan, and the picks stay within them.</p>
@@ -183,7 +181,7 @@
 
     <div class="feature">
       <div class="feature-top">
-        <span class="feature-icon">&#10084;&#65039;</span>
+        <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.5 15.4 12 20 12 20z"/></svg>
         <span class="feature-title">Learns as you drink</span>
       </div>
       <p class="feature-body">Rate the wines you try as Love, Like or Dislike, and your taste profile adjusts. A taste chart shows where you sit on sweetness, body, tannin, acidity and alcohol.</p>
