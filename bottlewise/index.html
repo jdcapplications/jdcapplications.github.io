@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BottleWise &mdash; Your personal wine guide</title>
-<meta name="description" content="BottleWise reads any restaurant wine list and tells you exactly what to order, ranked for your taste. Scan bottles and store shelves too.">
+<meta name="description" content="Photograph a restaurant wine list or a store shelf and BottleWise picks the wines that fit your taste, each with a plain-English reason. Scan a single bottle to see if it suits you.">
+<link rel="icon" type="image/png" href="/bottlewise/favicon.png">
+<link rel="apple-touch-icon" href="/bottlewise/apple-touch-icon.png">
+<meta property="og:title" content="BottleWise">
+<meta property="og:description" content="Wine picks made for your taste, from any wine list, shelf or bottle.">
+<meta property="og:image" content="https://www.jdcapplications.com/bottlewise/icon.png">
 <style>
   :root {
     --bg: #f5f5f2;
@@ -40,9 +45,8 @@
   header { padding: 40px 0 56px; }
   .app-head { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
   .app-icon {
-    width: 62px; height: 62px; border-radius: 15px; flex: 0 0 auto;
-    background: linear-gradient(150deg, #883240, #4A1820);
-    display: flex; align-items: center; justify-content: center; font-size: 31px;
+    width: 64px; height: 64px; border-radius: 22.5%; flex: 0 0 auto;
+    display: block; box-shadow: 0 0 0 0.5px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08);
   }
   .eyebrow {
     font-size: 12px; font-weight: 600; letter-spacing: 0.07em;
@@ -122,23 +126,23 @@
 
   <header>
     <div class="app-head">
-      <div class="app-icon">&#127863;</div>
+      <img class="app-icon" src="/bottlewise/icon.png" alt="BottleWise app icon" width="64" height="64">
       <div>
         <p class="eyebrow">BottleWise</p>
         <p class="app-name-lg">Wine, without the guesswork</p>
       </div>
     </div>
-    <h1>Read any wine list and know exactly what to order.</h1>
-    <p class="lede">BottleWise learns your taste in the first few minutes, then turns any restaurant wine list into clear, ranked picks made for you. No jargon. No staring at a list of names you don't recognize.</p>
+    <h1>Photograph the wine list. Know what to order.</h1>
+    <p class="lede">A two-minute quiz tells BottleWise what you like. After that, snap a restaurant wine list or a store shelf and it picks the wines that fit you, each with a one-line reason in plain English. No jargon, and no guessing at names you don't recognize.</p>
 
     <span class="store-btn">&#63743;&nbsp; App Store</span>
     <p class="store-note">Coming soon to iPhone.</p>
 
     <div class="pill-row">
-      <span class="pill pill-wine">Citrus</span>
-      <span class="pill pill-coral">Red berry</span>
-      <span class="pill pill-amber">Spice &amp; oak</span>
-      <span class="pill pill-teal">Earthy</span>
+      <span class="pill pill-wine">Dark fruit</span>
+      <span class="pill pill-coral">Red fruit</span>
+      <span class="pill pill-amber">Oaky &amp; buttery</span>
+      <span class="pill pill-teal">Earthy &amp; savory</span>
     </div>
   </header>
 
@@ -148,9 +152,17 @@
     <div class="feature">
       <div class="feature-top">
         <span class="feature-icon">&#128247;</span>
-        <span class="feature-title">Scan the wine list</span>
+        <span class="feature-title">Scan a wine list</span>
       </div>
-      <p class="feature-body">Snap a photo of the list at any restaurant. BottleWise reads it, matches each wine against your taste profile, and ranks the ones you're most likely to love.</p>
+      <p class="feature-body">Photograph the list at a restaurant, or a menu or chalkboard. BottleWise reads every wine on it and gives you five picks: your two best matches, plus three &ldquo;stretch picks&rdquo; that are a little outside your usual taste but worth a try. Each one comes with a short reason.</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-top">
+        <span class="feature-icon">&#127978;</span>
+        <span class="feature-title">Scan a store shelf</span>
+      </div>
+      <p class="feature-body">Standing in front of a wall of wine? Photograph the shelf in the same way. BottleWise picks the bottles that suit you and circles where each one sits in your photo, so you can find it on the shelf.</p>
     </div>
 
     <div class="feature">
@@ -158,23 +170,23 @@
         <span class="feature-icon">&#127863;</span>
         <span class="feature-title">Scan a single bottle</span>
       </div>
-      <p class="feature-body">Curious about a bottle in your hand? Scan the label for a plain-language read on its flavor profile and whether it fits what you like.</p>
+      <p class="feature-body">Holding a bottle you don't know? Scan the label to see what it tastes like and how well it fits your palate, then save it to your wines.</p>
     </div>
 
     <div class="feature">
       <div class="feature-top">
-        <span class="feature-icon">&#127978;</span>
-        <span class="feature-title">Scan the shelf</span>
+        <span class="feature-icon">&#127919;</span>
+        <span class="feature-title">Narrow it down</span>
       </div>
-      <p class="feature-body">Facing a wall of wine at the store? Scan the shelf and BottleWise surfaces the bottles worth your money, ranked for your taste.</p>
+      <p class="feature-body">Only want a red tonight, a sparkling wine, or something under $30? Choose a wine type, a style or grape, and a budget before you scan, and the picks stay within them.</p>
     </div>
 
     <div class="feature">
       <div class="feature-top">
-        <span class="feature-icon">&#127869;</span>
-        <span class="feature-title">Built around your taste</span>
+        <span class="feature-icon">&#10084;&#65039;</span>
+        <span class="feature-title">Learns as you drink</span>
       </div>
-      <p class="feature-body">A short flavor quiz builds your profile from the start, and every pick is explained in language that actually means something. Food pairing helps you match wine to the meal in front of you.</p>
+      <p class="feature-body">Rate the wines you try as Love, Like or Dislike, and your taste profile adjusts. A taste chart shows where you sit on sweetness, body, tannin, acidity and alcohol.</p>
     </div>
   </section>
 
@@ -184,22 +196,30 @@
       <div class="step-num">1</div>
       <div>
         <p class="step-title">Tell us what you like</p>
-        <p class="step-body">A quick flavor quiz sets up your taste profile. It sharpens the more you use the app.</p>
+        <p class="step-body">Name a few wines you enjoy, pick the flavors you like and the ones you don't. That builds your starting taste profile.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
       <div>
         <p class="step-title">Point your camera</p>
-        <p class="step-body">At a list, a bottle, or a shelf. BottleWise reads it on the spot.</p>
+        <p class="step-body">At a wine list, a shelf or a bottle, or choose a photo you already took. Results arrive in about 20 seconds.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
       <div>
-        <p class="step-title">Order with confidence</p>
-        <p class="step-body">Get ranked picks with a clear reason behind each one. Save the wines you love to come back to.</p>
+        <p class="step-title">Order, then rate it</p>
+        <p class="step-body">Pick from your matches with a clear reason behind each one. Rate what you drank, and your next picks get more personal.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <p class="section-label">Pricing</p>
+    <div class="feature">
+      <p class="feature-body"><strong style="color:var(--ink)">Free:</strong> 5 scans every month, with every feature included. Scans that don't produce a result aren't counted.<br>
+      <strong style="color:var(--ink)">BottleWise Pro:</strong> unlimited scans, through an App Store subscription you can cancel at any time.</p>
     </div>
   </section>
 

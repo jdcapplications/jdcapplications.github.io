@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BottleWise &mdash; Support</title>
-<meta name="description" content="Help and answers for BottleWise.">
+<meta name="description" content="Help and answers for BottleWise: scanning tips, free scans and subscriptions, your taste profile and your data.">
+<link rel="icon" type="image/png" href="/bottlewise/favicon.png">
+<link rel="apple-touch-icon" href="/bottlewise/apple-touch-icon.png">
 <style>
   :root {
     --bg: #f5f5f2; --ink: #1a1a1a; --muted: #888;
@@ -25,6 +27,12 @@
   .back:hover { color: var(--ink); }
 
   header { padding: 24px 0 8px; }
+  .app-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .app-head .eyebrow { margin-bottom: 0; }
+  .app-icon {
+    width: 40px; height: 40px; border-radius: 22.5%; display: block;
+    box-shadow: 0 0 0 0.5px rgba(0,0,0,0.12);
+  }
   .eyebrow {
     font-size: 12px; font-weight: 600; letter-spacing: 0.07em;
     text-transform: uppercase; color: var(--wine); margin-bottom: 10px;
@@ -49,7 +57,7 @@
     font-size: 11px; font-weight: 600; letter-spacing: 0.07em;
     text-transform: uppercase; color: var(--muted); margin: 40px 0 16px;
   }
-  .faq { padding-bottom: 48px; }
+  .faq:last-of-type { padding-bottom: 48px; }
   .qa { border-bottom: 0.5px solid var(--border); padding: 18px 0; }
   .qa:last-child { border-bottom: none; }
   .q { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
@@ -71,54 +79,90 @@
   </div>
 
   <header>
-    <p class="eyebrow">BottleWise</p>
+    <div class="app-head">
+      <img class="app-icon" src="/bottlewise/icon.png" alt="" width="40" height="40">
+      <p class="eyebrow">BottleWise</p>
+    </div>
     <h1>Support</h1>
     <p class="sub">Stuck on something, or have an idea? We read every message.</p>
   </header>
 
   <div class="contact-card">
-    <p>The fastest way to reach us is by email. Tell us what happened and which iPhone you're using, and we'll help.</p>
+    <p>The fastest way to reach us is by email. Tell us what happened, which iPhone you're using and your app version (in the app: Settings &rarr; About). A screenshot helps too.</p>
     <a class="contact-btn" href="mailto:support@jdcapplications.com?subject=BottleWise%20support">&#9993;&nbsp; Email support</a>
     <p class="response-note">We aim to reply within two business days.</p>
   </div>
 
-  <p class="section-label">Common questions</p>
+  <p class="section-label">Scanning</p>
   <div class="faq">
-
     <div class="qa">
-      <p class="q">A scan didn't read the list correctly. What can I do?</p>
-      <p class="a">Lists with stylish fonts, handwriting, or dim lighting are the hardest to read. Try a straight-on photo with good light and the whole list in frame. If a wine still comes out wrong, let us know which one so we can keep improving.</p>
+      <p class="q">A scan misread the list or a label. What can I do?</p>
+      <p class="a">Fancy fonts, handwriting and dim lighting are the hardest to read. Hold the phone square to the page, get the whole list in frame, and tap the screen to focus on the text. In a dark room, turn on the torch rather than the flash. On glossy menus, glass or foil labels, turn the flash off, because its glare hides text. If a wine still comes out wrong, email us its name so we can improve.</p>
     </div>
+    <div class="qa">
+      <p class="q">Can I use a photo I already took?</p>
+      <p class="a">Yes. Tap Library instead of Camera and choose any photo of a wine list, shelf or bottle.</p>
+    </div>
+    <div class="qa">
+      <p class="q">Why didn't I get any recommendations?</p>
+      <p class="a">Either BottleWise couldn't read any wines in the photo, or it read them but none matched your filters. If it says how many wines it found, tap Change filters to widen the wine type, style or budget, then scan again. Neither case uses up a free scan.</p>
+    </div>
+    <div class="qa">
+      <p class="q">What is a &ldquo;stretch pick&rdquo;?</p>
+      <p class="a">Each wine-list or shelf scan gives you two best matches and three stretch picks. Stretch picks sit a little outside your usual taste: a way to try something new. Rating them teaches your profile a lot.</p>
+    </div>
+    <div class="qa">
+      <p class="q">Can I leave the app while a scan runs?</p>
+      <p class="a">Yes, for a short while. Scans usually take around 20 seconds and keep going in the background. If you allow notifications, BottleWise lets you know when the results are ready. If iOS stops the scan before it finishes, just scan again; a failed scan isn't counted.</p>
+    </div>
+    <div class="qa">
+      <p class="q">Does BottleWise work offline?</p>
+      <p class="a">Scanning needs an internet connection. Your saved wines, ratings, taste profile and scan history are stored on your phone and open without one.</p>
+    </div>
+  </div>
 
+  <p class="section-label">Your taste profile</p>
+  <div class="faq">
     <div class="qa">
       <p class="q">How does BottleWise know my taste?</p>
-      <p class="a">A short flavor quiz when you start sets up your taste profile, and it gets sharper as you save the wines you love and come back to them.</p>
+      <p class="a">The quiz you take when you first open the app sets your starting profile. After that, rate the wines you try as Love, Like or Dislike in My Wines, and your profile moves toward what you enjoyed and away from what you didn't. Your taste chart in My Wines shows where you sit on sweetness, body, tannin, acidity and alcohol.</p>
     </div>
-
     <div class="qa">
-      <p class="q">What's included for free, and what needs a subscription?</p>
-      <p class="a">You can scan and get personalized picks for free up to a monthly limit. A subscription unlocks unlimited scans and food pairing.</p>
+      <p class="q">Can I start my taste profile over?</p>
+      <p class="a">Yes. In the app, go to Settings &rarr; Delete My Data. This removes your saved wines, ratings, taste profile and scan history from your phone and takes you back to the quiz. It can't be undone, and it doesn't affect your subscription or this month's free scans.</p>
     </div>
+  </div>
 
+  <p class="section-label">Free scans &amp; subscription</p>
+  <div class="faq">
+    <div class="qa">
+      <p class="q">What's free, and what does BottleWise Pro add?</p>
+      <p class="a">Everyone gets 5 scans a month, shared across wine lists, shelves and bottles, with every feature included: your taste profile, ratings, finding picks on the shelf and your full scan history. Only scans that produce results are counted, and the count resets at the start of each month. BottleWise Pro adds unlimited scans.</p>
+    </div>
     <div class="qa">
       <p class="q">How do I manage or cancel my subscription?</p>
-      <p class="a">Subscriptions are handled by Apple. Open the Settings app on your iPhone, tap your name, then Subscriptions, and you can change or cancel BottleWise there.</p>
+      <p class="a">Subscriptions are handled by Apple. On your iPhone, open the Settings app, tap your name, then Subscriptions, and choose BottleWise to change or cancel it.</p>
     </div>
-
     <div class="qa">
-      <p class="q">Can I reset my taste profile?</p>
-      <p class="a">Yes. You can clear your saved wines and reset your profile from within the app's settings, and start the flavor quiz again whenever you like.</p>
+      <p class="q">I subscribed, but the app still counts my scans.</p>
+      <p class="a">In the app, go to Settings &rarr; Restore purchases, while signed in with the Apple ID you subscribed with. If that doesn't fix it, email us.</p>
     </div>
+    <div class="qa">
+      <p class="q">Does reinstalling the app reset my free scans?</p>
+      <p class="a">No. The monthly allowance belongs to your iPhone, so deleting and reinstalling the app doesn't change it.</p>
+    </div>
+  </div>
 
+  <p class="section-label">Privacy</p>
+  <div class="faq">
     <div class="qa">
       <p class="q">How is my data handled?</p>
-      <p class="a">We keep data collection to the minimum needed to run the app, and we don't sell your information. See our <a href="/bottlewise/privacy.html">Privacy Policy</a> for the full picture.</p>
+      <p class="a">There are no accounts. Your taste profile, saved wines, ratings and scan history stay on your phone. Photos you scan are sent to be read and are not stored by us. We don't sell your information or show ads. Our <a href="/bottlewise/privacy.html">Privacy Policy</a> has the full details.</p>
     </div>
-
   </div>
 
   <footer>
-    &copy; 2026 JDC Applications &middot; <a href="/bottlewise/privacy.html">Privacy</a>
+    &copy; 2026 JDC Applications &middot; <a href="/bottlewise/">BottleWise</a> &middot; <a href="/bottlewise/privacy.html">Privacy</a>
   </footer>
 
 </div>

@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BottleWise &mdash; Privacy Policy</title>
 <meta name="description" content="How BottleWise handles your data.">
+<link rel="icon" type="image/png" href="/bottlewise/favicon.png">
+<link rel="apple-touch-icon" href="/bottlewise/apple-touch-icon.png">
 <style>
   :root {
     --bg: #f5f5f2; --ink: #1a1a1a; --muted: #888;
@@ -25,6 +27,12 @@
   .back:hover { color: var(--ink); }
 
   header { padding: 24px 0 8px; }
+  .app-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .app-head .eyebrow { margin-bottom: 0; }
+  .app-icon {
+    width: 40px; height: 40px; border-radius: 22.5%; display: block;
+    box-shadow: 0 0 0 0.5px rgba(0,0,0,0.12);
+  }
   .eyebrow {
     font-size: 12px; font-weight: 600; letter-spacing: 0.07em;
     text-transform: uppercase; color: var(--wine); margin-bottom: 10px;
@@ -62,7 +70,10 @@
   </div>
 
   <header>
-    <p class="eyebrow">BottleWise</p>
+    <div class="app-head">
+      <img class="app-icon" src="/bottlewise/icon.png" alt="" width="40" height="40">
+      <p class="eyebrow">BottleWise</p>
+    </div>
     <h1>Privacy Policy</h1>
     <p class="updated">Last updated: September 28, 2026</p>
   </header>
